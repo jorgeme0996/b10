@@ -1,0 +1,43 @@
+<% include ../partials/header %>
+
+<style>
+
+body{
+    background-image: url("http://www.seguridadyproteccion.unam.mx/PC3/img/logo.png");
+    background-repeat: no-repeat;
+    background-position: center; 
+}
+
+</style>
+
+ <div class="row">
+     <div class="col-md-4"></div>
+     <div class="col-md-4">
+            <div class="jumbotron jumboLogIn">
+                <h1>Inicia Sesión</h1>
+                <form action="/login" method="POST">
+
+                    <div class="uk-margin">
+                        <div class="uk-inline">
+                            <span class="uk-form-icon" uk-icon="icon: user"></span>
+                            <input class="uk-input" name="username" type="text" placeholder="usuario">
+                        </div>
+                    </div>
+                
+                    <div class="uk-margin">
+                        <div class="uk-inline">
+                            <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: lock"></span>
+                            <input class="uk-input" name="password" type="password" placeholder="contraseña">
+                        </div>
+                    </div>
+                    
+                    <button class="ui inverted green button btnLogin">Enviar</button>
+
+                </form>
+            </div>
+            
+     </div>
+     <div class="col-md-4"></div>
+ </div>
+
+<% include ../partials/footer %>

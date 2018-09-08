@@ -1,0 +1,63 @@
+<% include ../partials/header %>
+<style>
+
+h3{
+    margin-bottom: 3%;
+}
+
+.boxBusqueda{
+    border: solid 3px black;
+}
+
+.buscarbtn{
+    margin-top: 3%;
+}
+
+</style>
+<div class="jumbotron">
+    <h1>Algoritmo para busqueda de eventos</h1>
+</div>
+
+<div class="row">
+    <div class="col-md-6 boxBusqueda">
+        <h3>Busqueda por fecha y turno</h3>
+        <form action="/search/fecha/turno" method="POST">
+            <div class="ui form">
+                <div class="field">
+                    <label>Fecha</label>
+                    <input type="text" name="fecha" placeholder="Formato: dd/mm/aaaa">
+                </div>
+                <div class="field">
+                    <label>Turno</label>
+                    <select name="turno">
+                        <option value="Matutino">Matutino</option>
+                        <option value="Vespertino">Vespertino</option>
+                        <option value="Nocturno">Nocturno</option>
+                    </select>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-warning buscarbtn">Buscar</button>
+        </form>
+    </div>
+
+    <div class="col-md-6 boxBusqueda">
+        <h3>Busqueda por incidente y fecha</h3>
+        <form action="/search/incidente/fecha" method="POST">
+            <div class="ui form">
+                <div class="field">
+                    <label>Incidente</label>
+                    <input type="text" name="incidente" placeholder="Escribe el titulo del incidente a buscar">
+                </div>
+                <div class="field">
+                    <label>Fecha</label>
+                    <input type="text" name="fecha" placeholder="Formato: dd/mm/aaaa">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-warning buscarbtn">Buscar</button>
+        </form>
+    </div>  
+    
+</div>
+
+
+<% include ../partials/footer %>

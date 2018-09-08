@@ -1,0 +1,86 @@
+<% include ../partials/header %>
+
+<style>
+.parte{
+    border: solid 2px #0000cc;
+}
+
+.container{
+    margin-top: 3%; 
+}
+
+p{
+    text-align: center;
+}
+
+.encabezado{
+    background-color: black;
+    color: white;
+}
+
+.entidad{
+    background-color: #ec5f5f;
+}
+
+.texto {
+    background-color: #cce0ff;
+}
+</style>
+
+<div class="container">
+    <div class="row parte">
+        <div class="col-md-3 parte encabezado">
+            <p> FOLIO: <%= evento.folio %></p>
+        </div>
+        <div class="col-md-3 parte encabezado">
+            <p>Fecha: <%= evento.fecha %></p> 
+        </div>
+        <div class="col-md-3 parte encabezado">
+            <p>TURNO: <%= evento.turno %></p> 
+        </div>
+        <div class="col-md-3 parte encabezado">
+            <p>ANALISTA: <%= evento.analista.username %></p>
+        </div>
+    </div>
+    <div class="row parte">
+        <div class="col-md-9 parte encabezado">
+            <p>FUENTE DE REPORTE: <%= evento.fuenteReporte %></p>
+        </div>
+        <div class="col-md-3 parte encabezado">
+            <p>CLAVE: <%= evento.clave %></p>
+        </div>
+    </div>
+    <div class="row parte">
+        <div class="col-md-4 parte encabezado">
+            <p>HORA DE REPORTE: <%= evento.horaReporte %> hrs</p>
+        </div>
+        <div class="col-md-4 parte encabezado">
+            <p>HORA DE ARRIBO: <%= evento.horaArribo %> hrs</p>
+        </div>
+        <div class="col-md-4 parte encabezado">
+            <p>HORA DE RETIRO: <%= evento.horaRetiro %> hrs</p>
+        </div>
+    </div>
+    <div class="row parte">
+        <div class="col-md-4 parte entidad">
+            <p>ENTIDAD:</p>
+        </div>
+        <div class="col-md-8 parte texto">
+            <strong><p><%= evento.ubicacionEntidad %></p></strong> 
+        </div>
+    </div>
+    <div class="row parte">
+        <div class="col-md-4 parte entidad">
+            <p>ICIDENTE:</p>
+        </div>
+        <div class="col-md-8 parte texto">
+            <strong><p><%= evento.incidente %></p></strong> 
+        </div>
+    </div>
+    <div class="row parte">
+        <div class="col-md-12 parte texto">
+            <p><%= evento.observaciones %></p>
+        </div>
+    </div>
+</div>
+<% include ../partials/footer %>

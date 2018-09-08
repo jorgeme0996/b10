@@ -1,0 +1,38 @@
+<% include ../partials/header %>
+<div class="container">
+    <div class="jumbotron">
+        <form class="ui form" action="/register" method="POST">
+            <div class="two fields">
+                <div class="field">
+                    <label>Usuario</label>
+                    <input type="text" name="username" placeholder="usuario">
+                </div>
+                <div class="field">
+                    <label>Contraseña</label>
+                    <input type="text" name="password" placeholder="contraseña">
+                </div>
+            </div>
+
+            <div class="two fields">
+                <div class="field">
+                    <label>Nombre</label>
+                    <input type="text" name="name" placeholder="nombre">
+                </div>
+
+                <div class="field">
+                    <label>Rol que desempeña</label>
+                    <select class="ui fluid dropdown" name="rol">
+                        <option value="0">Administrador</option>
+                        <option value="1">Supervisor</option>
+                        <option value="2">Analista</option>
+                    </select>
+                </div>
+            </div>
+            <button class="ui inverted green button btnLogin">Enviar</button>
+        </form> 
+    </div>
+     
+</div>
+
+
+<% include ../partials/footer %>

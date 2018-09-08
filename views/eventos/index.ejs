@@ -1,0 +1,44 @@
+<% include ../partials/header %>
+<style>
+body{
+    background-image: url("https://www.revistacodigo.com/wp-content/uploads/2013/04/Biblioteca-Central.jpg"); 
+    background-repeat: no-repeat; 
+    background-attachment: fixed;
+}
+
+#search{
+    margin-bottom: 3%;
+    width: 100%;
+}
+</style>
+
+
+<div class="jumbotron">
+    <h1>Todos los eventos de la base de datos</h1>
+</div>
+
+<div class="row">
+    <% for(let i in eventos){ %>
+       
+        <div class="uk-card uk-card-default uk-width-1-2@m">
+            <div class="uk-card-header">
+                <div class="uk-grid-small uk-flex-middle" uk-grid>
+                    <div class="uk-width-expand">
+                        <h3 class="uk-card-title uk-margin-remove-bottom"><%= eventos[i].incidente %></h3>
+                        <p class="uk-text-meta uk-margin-remove-top"> <%= eventos[i].fecha %> </p>
+                        <p class="uk-text-meta uk-margin-remove-top">Analista: <%= eventos[i].analista.username %> </time></p>
+                    </div>
+                </div>
+            </div>
+            <div class="uk-card-body">
+                <p><%= eventos[i].observaciones.substring(0,100) %>...</p>
+            </div>
+            <div class="uk-card-footer">
+                <a href="/eventos/<%= eventos[i]._id %>" class="uk-button uk-button-text">Más Información</a>
+            </div>
+        </div>
+        
+    <% } %>
+</div>
+
+<% include ../partials/footer %>

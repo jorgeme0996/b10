@@ -1,0 +1,135 @@
+<% include ../partials/header %>
+
+ <h1>Formulario de evento</h1>
+
+ <div class="jumbotron">
+        <form class="ui form" action="/eventos/new" method="POST">
+            <h4 class="ui dividing header">TICKET DE DESPACHO</h4>
+            <div class="three fields">
+                <div class="field">
+                    <label>Fecha</label>
+                    <input type="text" name="fecha" placeholder="Formato: dd/mm/aaaa">
+                </div>
+        
+                <div class="field">
+                    <label>Turno</label>
+                    <select name="turno" class="ui fluid dropdown">
+                        <option value="Matutino">Matutino</option>
+                        <option value="Vespertino">Vespertino</option>
+                        <option value="Nocturno">Nocturno</option>
+                    </select>
+                </div>
+        
+                <div class="field">
+                    <label>Folio</label>
+                    <input type="text" name="folio" placeholder="Ejemplo: EST-Z6-01 (Estación-Zona 6-cámara 01)">
+                </div>
+            </div>
+        
+            <div class="three fields">
+                <div class="field">
+                    <label>Fuente de reporte</label>
+                    <input type="text" name="fuenteReporte" placeholder="Base10/Vigilancia/K8">
+                </div>
+        
+                <div class="field">
+                    <label>Hora de reporte</label>
+                    <input type="text" name="horaReporte" placeholder="Formato 24 hrs">
+                </div>
+        
+                <div class="field">
+                    <label>Clave</label>
+                    <select name="clave">
+                        <option>N/A</option>
+                        <option>Sospechoso: 57</option>
+                        <option>Persona drogada: 21</option>
+                        <option>Persona ebria: 25</option>
+                        <option>Robo: 59</option>
+                        <option>Robo por asalto: 60</option>
+                        <option>Robo de auto: 61</option>
+                        <option>Lesionado: 63</option>
+                        <option>Riña: 66</option>
+                        <option>Practiva de manejo: 73</option>
+                        <option>Atropellado: K3</option>
+                        <option>Accidente automovilistico: BETA_1</option>
+                        <option>Incendio forestal: BETA_2</option>
+                        <option>Incendio de inmueble: BETA_3</option>
+                        <option>Choque: K5</option>
+                        <option>Secuestro: R7</option>
+                        <option>Violación: 65</option>
+                    </select>
+                </div>
+            </div>
+        
+            <div class="field">
+                <label>Incidente</label>
+                <input type="text" name="incidente" placeholder="titulo del incidente">
+            </div>
+        
+            <div class="field">
+                <label>Ubicación/Entidad</label>
+                <div class="fields">
+                    <div class="twelve wide field">
+                    <input type="text" name="entidad">
+                    </div>
+                    <div class="four wide field">
+                    <select name="clave">
+                        <option value="">Zona</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                    </select>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="three fields">
+                <div class="field">
+                    <label>Torreta</label>
+                    <input type="text" name="torreta" placeholder="Ejemplo: 27 o 27,14,01">
+                </div>
+                <div class="field">
+                    <label>Hora de arribo:</label>
+                    <input type="text" name="horaArribo" placeholder="Formato 24 hrs" step="1">
+                </div>
+        
+                <div class="field">
+                    <label>Hora de retiro:</label>
+                    <input type="text" name="horaRetiro" placeholder="Formato 24 hrs" step="1">
+                </div>
+            </div>
+        
+            <div class="two fields">
+                <div class="field">
+                    <label>Alamo</label>
+                    <input type="text" name="alamo" placeholder="Ejemplo 02 o 03,02,01">
+                </div>
+        
+                <div class="field">
+                    <label>Otros</label>
+                    <input type="text" name="otros" placeholder="Ejemplo: Personal de SSP">
+                </div>
+                
+            </div>
+        
+            <div class="field">
+                <label>Captación del incidente</label>
+                <input type="text" name="camaras" placeholder="Ejemplo: 205 o 203, 205, 204">
+            </div>
+        
+            <div class="field">
+                <label>Observaciones</label>
+                <textarea name="observaciones"></textarea>
+            </div>
+            <button class="uk-button uk-button-primary">Enviar información</button>
+        </form>
+ </div>
+ 
+
+<% include ../partials/footer %>
