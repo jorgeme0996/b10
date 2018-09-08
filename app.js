@@ -14,7 +14,8 @@ var efemeridesRoutes    = require("./routes/efemerides"),
     searchRoutes        = require("./routes/search");
 
 //seedDB
-mongoose.connect("mongodb://localhost/ORWELL", {useNewUrlParser: true});
+//mongoose.connect("mongodb://localhost/ORWELL", {useNewUrlParser: true});
+mongoose.connect("mongodb://jorge:jorge007@ds249942.mlab.com:49942/base10", {useNewUrlParser:true});
 app.use(bodyParser.urlencoded({extended:true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
@@ -45,6 +46,7 @@ app.get("/", function(req, res){
     res.render("landing", {currentUser: req.user});
 });
 
-app.listen(port, function(){
-    console.log("Servodor corriendo en el puerto " + port)
+app.listen(process.env.PORT,process.env.IP, function(){
+    console.log("Esta vivo ")
 });
+
