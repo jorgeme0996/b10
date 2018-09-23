@@ -1,14 +1,14 @@
 <% include ../partials/header %>
 <style>
-body{
-    background-image: url("https://www.revistacodigo.com/wp-content/uploads/2013/04/Biblioteca-Central.jpg"); 
-    background-repeat: no-repeat; 
-    background-attachment: fixed;
-}
 
 #search{
     margin-bottom: 3%;
     width: 100%;
+}
+
+.uk-card {
+    margin-bottom: 2%;
+    background:  #ffffcc;
 }
 </style>
 
@@ -34,9 +34,11 @@ body{
                 <p><%= eventos[i].observaciones.substring(0,100) %>...</p>
             </div>
             <div class="uk-card-footer">
-                <a href="/eventos/<%= eventos[i]._id %>" class="uk-button uk-button-text">Más Información</a>
+                <a href="/eventos/<%= eventos[i]._id %>" class="btn btn-success">Más Información</a>
             </div>
-        </div>
+        </div>  
+     
+        
         
     <% } %>
 </div>

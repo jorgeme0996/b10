@@ -1,6 +1,10 @@
 <% include ../partials/header %>
 
 <style>
+.btn{
+    margin-top: 2%;
+}
+
 .parte{
     border: solid 2px #0000cc;
 }
@@ -47,7 +51,7 @@ p{
             <p>FUENTE DE REPORTE: <%= evento.fuenteReporte %></p>
         </div>
         <div class="col-md-3 parte encabezado">
-            <p>CLAVE: <%= evento.clave %></p>
+            <p>CLAVE: <%= evento.clave %> </p>
         </div>
     </div>
     <div class="row parte">
@@ -71,7 +75,7 @@ p{
     </div>
     <div class="row parte">
         <div class="col-md-4 parte entidad">
-            <p>ICIDENTE:</p>
+            <p>INCIDENTE:</p>
         </div>
         <div class="col-md-8 parte texto">
             <strong><p><%= evento.incidente %></p></strong> 
@@ -83,4 +87,6 @@ p{
         </div>
     </div>
 </div>
+
+<a href="/eventos/<%= evento._id %>/edit" class="btn btn-warning btn-lg btn-block">Editar</a>
 <% include ../partials/footer %>

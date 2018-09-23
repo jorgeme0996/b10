@@ -85,6 +85,27 @@ router.get("/eventos/:id", isLoggedIn, function(req, res){
     });
 });
 
+router.get("/eventos/:id/edit", isLoggedIn, function(req, res){
+    var id = req.params.id
+    Evento.findById(id, function(err, foundEvento){
+        res.render("eventos/edit", {evento: foundEvento, currentUser: req.user}); 
+    });  
+});
+
+// UPDATE CAMPGROUND ROUTE
+router.put("/evento/:id/edit", isLoggedIn, function(req, res){
+    var id = req.params.id;
+    var dataUpdated = req.body.data;
+    Evento.findByIdAndUpdate(id, dataUpdated, function(err, updatedEvento){
+       if(err){
+           res.redirect("/eventos");
+       } else {
+           //redirect somewhere(show page)
+           console.log(updatedEvento)
+           res.redirect("/eventos/" + id);
+       }
+    });
+});
 
 function isLoggedIn(req, res, next){
     if(req.isAuthenticated()){

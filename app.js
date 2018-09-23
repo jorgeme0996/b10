@@ -14,7 +14,7 @@ var efemeridesRoutes    = require("./routes/efemerides"),
     searchRoutes        = require("./routes/search");
 
 //seedDB
-//mongoose.connect("mongodb://localhost/ORWELL", {useNewUrlParser: true});
+// mongoose.connect("mongodb://localhost/ORWELL", {useNewUrlParser: true});
 mongoose.connect("mongodb://jorge:jorge007@ds249942.mlab.com:49942/base10", {useNewUrlParser:true});
 app.use(bodyParser.urlencoded({extended:true}));
 app.set("view engine", "ejs");
@@ -50,3 +50,4 @@ app.listen(process.env.PORT,process.env.IP, function(){
     console.log("Esta vivo ")
 });
 
+// process.env.PORT,process.env.IP
